@@ -1,0 +1,29 @@
+table{
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: sans-serif;
+}
+
+th,td{
+    padding: 20px;
+    text-align: left;
+    border: 1px solid #bdc3c7;
+}
+
+th{
+    background-color: #0b0e10;
+    color: white;
+}
+
+
+/* ==========================index 2 dan 3.php================= */
+
+.box { 
+    padding: 5px; 
+    background-color: #e8f4fd; 
+    font-family: sans-serif; 
+    width: 50%; 
+}
+
+
