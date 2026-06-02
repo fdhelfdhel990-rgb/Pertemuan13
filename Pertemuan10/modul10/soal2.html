@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Web 2 - Lucius</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 30px; }
+        #hasil-inner { padding: 15px; border: 2px solid #666; margin-top: 20px; background: #eee; }
+    </style>
+</head>
+<body>
+    <h1>Macam-macam Output JS</h1>
+    <p>Cek console (F12) sama liat popup alert ya pas file ini dipencet.</p>
+    <div id="hasil-inner">
+        Teks ini bakal ilang diganti JS...
+    </div>
+    <script>
+        let coba='apa hayo';
+        console.log(coba);
+        let status = "Lagi ngerjain tugas...";
+        console.log("Status sekarang: " + status);
+        const klik=document
+        klik.addEventListener('click',function(){
+            alert("Jangan diganggu sedang istirahat")
+        });
+        document.write("<p style='color: red;'>Teks ini dimunculkan oleh  document.write() di akhir halaman.</p>");
+       let box = document.getElementById("hasil-inner");
+        box.innerHTML = "<h3>Horee!</h3><p>Berhasil ganti isi div pake innerHTML.</p>";
+    </script>
+</body>
+</html>

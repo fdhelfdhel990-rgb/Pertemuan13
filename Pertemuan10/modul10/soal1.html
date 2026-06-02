@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+        div{
+            background-color: aliceblue;
+            color: black;
+            margin: 20px 10px;
+            padding: 20px 10px ;
+            border-radius: 5px;
+            box-shadow: 10px  0  15px rgba(0,0,0,0.5);
+        }
+        button{
+            background-color: rgb(71, 54, 229);
+            color: white;
+            border: none;
+            padding: 5px;
+            border-radius: 3px;
+        }
+    </style>
+    <script>
+        function halo(){
+            alert('Selamat pagi kawan');
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Belajar Memanggil JS</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. At itaque cumque quos 
+            quisquam ut delectus aut tempore explicabo, distinctio quam repudiandae, dolore 
+            quod ducimus aliquid blanditiis saepe omnis reiciendis deserunt.
+        </p>
+        <hr>
+        <h3>1.Inline Java Script</h3>
+        <button onclick="alert('ini muncul karena pakai alert')">klik saya (inline)</button>
+        <h3>2.Embed Java Script</h3>
+        <button onclick="halo()">Klik Saya(embed)</button>
+        <h3>External Java Script</h3>
+        <button id="external">Klik Saya(External)</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

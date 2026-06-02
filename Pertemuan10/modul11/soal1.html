@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>cek perbandingan angka</h2>
+    <button onclick="angka()">mulai perbandingan</button>
+    <script>
+        function angka(){
+            let bil1=Number(prompt('masukkan angka'));
+            let bil2=Number(prompt('masukkan angka'));
+            
+            if (bil1>bil2){
+                alert(`Angka ${bil1} lebih besar dari ${bil2}`);
+            }else if(bil2>bil1){
+               alert(`Angka ${bil2} lebih besar dari angka ${bil1}`);
+            }else if(bil1===bil2){
+                alert('Keduanya memiliki nilai yang sama');
+            }else{
+                alert('Input tidak valid')
+            }
+        }
+    </script>
+</body>
+</html>

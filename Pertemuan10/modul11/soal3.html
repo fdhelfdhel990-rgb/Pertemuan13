@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Membuat kalkulator dengna java script</h1>
+    <button onclick="hitung()">Buka kalkulator</button>
+    <p>hasil: <b id="output-hitung">-</b></p>
+    <script>
+        function hitung(){
+            let n1=Number(prompt('Masukkan nila ke-1'));
+            let op=prompt('Pilih (+,-,:,*)');
+            let n2=Number(prompt('Masukkan nilai2:'));
+            let hasil;
+
+            if(op ==='+'){
+                hasil=n1+n2;
+            }else if(op=== '-'){
+                hasil=n1-n2;
+            }else if(op===':'){
+                hasil=n2!==0 ? n1/n2:'tidak bisa dibagi (0)';
+            }else if (op==='*'){
+                hasil=n1*n2;
+            }else {
+                hasil='Operator salah'
+            }
+            document.getElementById('output-hitung').innerText=hasil;
+        }
+    </script>
+</body>
+</html>

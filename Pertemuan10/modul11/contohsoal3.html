@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Praktikan PPW1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+
+    <div class="card p-4 shadow-sm">
+        <h2>Input Data Praktikan</h2>
+        <p>Klik tombol di bawah untuk memvalidasi status praktikan anda.</p>
+        <button class="btn btn-primary" onclick="inputData()">Cek Status</button>
+
+        <div id="hasil" class="mt-4"></div>
+    </div>
+
+    <script>
+        function inputData() {
+            // 1. Konfirmasi status (Oke/Batal)
+            var yakin = confirm("Apakah anda praktikan PPW1?");
+
+            if (yakin == true) {
+                // 2. Minta input data jika klik Oke
+                var nama = prompt("Masukkan Nama:");
+                var nim = prompt("Masukkan NIM:");
+                var angkatan = prompt("Masukkan Angkatan:");
+
+                // 3. Susun tabel menggunakan class Bootstrap (table, table-bordered, table-striped)
+                var tabel = "<table class='table table-bordered table-striped'>";
+                tabel += "<thead class='table-dark'><tr><th>Kategori</th><th>Keterangan</th></tr></thead>";
+                tabel += "<tbody>";
+                tabel += "<tr><td>Nama</td><td>" + nama + "</td></tr>";
+                tabel += "<tr><td>NIM</td><td>" + nim + "</td></tr>";
+                tabel += "<tr><td>Angkatan</td><td>" + angkatan + "</td></tr>";
+                tabel += "</tbody></table>";
+
+                // 4. Masukkan tabel ke dalam div 'hasil'
+                document.getElementById("hasil").innerHTML = tabel;
+
+            } else {
+                // 5. Jika klik Batal/Cancel
+                alert("Anda bukan praktikan PPW1, anda tidak boleh masuk!");
+                document.getElementById("hasil").innerHTML = "<h4 class='text-danger'>Anda bukan praktikan PPW1, anda tidak boleh masuk!</h4>";
+            }
+        }
+    </script>
+
+</body>
+</html>
