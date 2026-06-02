@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 1 - CSS Grid Responsive</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --dark-color: #1e293b;
+            --light-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-gray: #64748b;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        .text-center { text-align: center; }
+        .p-20 { padding: 20px; }
+        .mt-20 { margin-top: 20px; }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 8%;
+            background-color: #fff;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+        .main-section {
+            padding: 60px 0;
+        }
+        .grid-container {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: 1fr;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden; 
+            box-shadow: var(--shadow);
+            display: flex; 
+            flex-direction: column; 
+            height: 100%; 
+}
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .card-img {
+            width: 100%;
+            height: 200px; 
+            overflow: hidden;
+            position: relative;
+        }
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            display: block;
+}
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .card-title {
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+        .card-text {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+        .btn-read {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        .btn-read:hover {
+            background-color: #1d4ed8;
+        }
+        @media (min-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 992px) {
+            .grid-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        footer {
+            background-color: var(--dark-color);
+            color: #fff;
+            padding: 40px 0;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="brand">MyWeb</a>
+        <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <main class="container main-section">
+        <h2 class="text-center" style="margin-bottom: 40px;">Daftar Konten Terkini</h2>
+        <div class="grid-container">
+            <article class="card">
+                <div class="card-img"><img src="image/img1.jpg" alt="img1"></div>
+                <div class="card-body"> 
+                    <h3 class="card-title">Pengembangan Web</h3>
+                    <p class="card-text">Belajar membuat website responsif menggunakan CSS Grid dan Flexbox untuk tampilan modern.</p>
+                    <a href="#" class="btn-read">Read More</a>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card-img"><img src="image/img2.jpg" alt="img2"></div>
+                <div class="card-body">
+                    <h3 class="card-title">Desain UI/UX</h3>
+                    <p class="card-text">Memahami psikologi warna dan tata letak untuk menciptakan pengalaman pengguna yang luar biasa.</p>
+                    <a href="#" class="btn-read">Read More</a>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card-img"><img src="image/img3.jpg" alt="img3"></div>
+                <div class="card-body">
+                    <h3 class="card-title">Cloud Computing</h3>
+                    <p class="card-text">Implementasi infrastruktur berbasis cloud untuk mendukung skalabilitas aplikasi di era digital.</p>
+                    <a href="#" class="btn-read">Read More</a>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card-img"><img src="image/img4.jpg" alt="img4"></div>
+                <div class="card-body">
+                    <h3 class="card-title">Mobile App</h3>
+                    <p class="card-text">Membangun aplikasi mobile lintas platform dengan performa tinggi dan desain yang intuitif.</p>
+                    <a href="#" class="btn-read">Read More</a>
+                </div>
+            </article>
+        </div>
+    </main>
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 Fadhel Sahila Albab. All rights reserved.</p>
+            <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 5px;">UGM Software Engineering Student</p>
+        </div>
+    </footer>
+</body>
+</html>

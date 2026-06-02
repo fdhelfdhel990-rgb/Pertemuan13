@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Nilai Mahasiswa</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #dee2e6;
+        }
+        .card {
+            border: none;
+            border-radius: 12px;
+            transition: transform 0.2s;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <header class="card shadow-sm mb-4">
+            <div class="card-body p-4">
+                <div class="d-flex align-items: center; flex-wrap: wrap; gap-3">
+                    <img src="image/img5.jpg" alt="Foto Profil" class="profile-img">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-1">Fadhel Sahila Albab</h3>
+                        <p class="text-muted mb-0">NIM: 24/534123/SV/24123</p>
+                        <p class="small text-secondary">D4 Rekayasa Perangkat Lunak - Universitas Gadjah Mada</p>
+                    </div>
+                    <div class="align-self-start">
+                        <span class="badge bg-success px-3 py-2">Aktif</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="row g-3 mb-4">
+            <div class="col-md-4">
+                <div class="card shadow-sm stat-card h-100 border-start border-primary border-4">
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-muted mb-1">Total SKS</h6>
+                            <h2 class="mb-0">20</h2>
+                        </div>
+                        <div class="fs-1">📚</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm stat-card h-100 border-start border-info border-4">
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-muted mb-1">IPK Semester</h6>
+                            <h2 class="mb-0">3.85</h2>
+                        </div>
+                        <div class="fs-1">⭐</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm stat-card h-100 border-start border-success border-4">
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-muted mb-1">Mata Kuliah Lulus</h6>
+                            <h2 class="mb-0">6</h2>
+                        </div>
+                        <div class="fs-1">✅</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="card shadow-sm">
+            <div class="card-header bg-white py-3">
+                <h5 class="mb-0">Karakteristik Nilai Semester Ini</h5>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th class="px-4">No</th>
+                                <th>Mata Kuliah</th>
+                                <th>SKS</th>
+                                <th>Nilai Huruf</th>
+                                <th>Nilai Angka</th>
+                                <th class="text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="px-4">1</td>
+                                <td>Pemrograman Berorientasi Objek</td>
+                                <td>3</td>
+                                <td><span class="badge bg-success">A</span></td>
+                                <td>4.0</td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#detailModal" onclick="setModalContent('Pemrograman Berorientasi Objek', 'Dr. Tech Enthusiast', 'Mempelajari konsep class, inheritance, dan polymorphism.')">Detail</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4">2</td>
+                                <td>Struktur Data & Algoritma</td>
+                                <td>3</td>
+                                <td><span class="badge bg-primary">B</span></td>
+                                <td>3.0</td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#detailModal" onclick="setModalContent('Struktur Data & Algoritma', 'Bpk. Algoritmawan', 'Fokus pada linked list, stack, queue, dan tree.')">Detail</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4">3</td>
+                                <td>Basis Data Dasar</td>
+                                <td>4</td>
+                                <td><span class="badge bg-warning text-dark">C</span></td>
+                                <td>2.0</td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#detailModal" onclick="setModalContent('Basis Data Dasar', 'Ibu Query', 'Implementasi SQL dan normalisasi database.')">Detail</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4">4</td>
+                                <td>Matematika Diskrit</td>
+                                <td>2</td>
+                                <td><span class="badge bg-danger">D</span></td>
+                                <td>1.0</td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#detailModal" onclick="setModalContent('Matematika Diskrit', 'Bpk. Logika', 'Logika matematika, himpunan, dan graf.')">Detail</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <footer class="text-center mt-5 text-muted">
+            <p>&copy; 2026 Fadhel. Dashboard Akademik Mahasiswa.</p>
+        </div>
+    </div>
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Detail Mata Kuliah</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="fw-bold">Nama Mata Kuliah:</label>
+                        <p id="modalMK">-</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="fw-bold">Dosen Pengampu:</label>
+                        <p id="modalDosen">-</p>
+                    </div>
+                    <div>
+                        <label class="fw-bold">Deskripsi:</label>
+                        <p id="modalDesc">-</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function setModalContent(mk, dosen, desc) {
+            document.getElementById('modalMK').innerText = mk;
+            document.getElementById('modalDosen').innerText = dosen;
+            document.getElementById('modalDesc').innerText = desc;
+        }
+    </script>
+</body>
+</html>
