@@ -1,0 +1,224 @@
+:root {
+    --primary-blue: #1F3A8A;
+    --secondary-gray: #E5E7EB;
+    --input-blue: #93C5FD;
+    --text-dark: #1F2937;
+    --white: #ffffff;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; 
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+}
+
+.navbar-brand .navbar-logo {
+    height: 40px;
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
+}
+
+.nav-link {
+    transition: color 0.3s;
+    color: #4B5563 !important;
+    font-weight: 500;
+    margin-left: 25px;
+}
+
+.nav-link:hover {
+    color: var(--primary-blue) !important;
+}
+
+.hero-section {
+    min-height: 90vh;
+    background-color: var(--white);
+}
+
+.hero-title {
+    font-size: 4rem;
+    color: #111827;
+    letter-spacing: -1px;
+}
+
+.hero-text {
+    max-width: 550px;
+}
+
+/* PROFILE CARD */
+.profile-card-blue {
+    background-color: var(--primary-blue);
+    padding: 60px 40px;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.profile-img-circle {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+}
+
+.status-indicator {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    width: 22px;
+    height: 22px;
+    background-color: #22C55E;
+    border: 3px solid var(--primary-blue);
+    border-radius: 50%;
+}
+
+/* BUTTONS */
+.btn-connect-style {
+    background-color: var(--secondary-gray);
+    color: var(--text-dark);
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 50px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-connect-style:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(31, 58, 138, 0.2);
+}
+
+/* ABOUT SECTION */
+.about-section {
+    background-color: var(--white);
+}
+
+/* PROJECT SECTION */
+.project-img {
+    height: 200px; 
+    object-fit: cover;
+}
+
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* CONTACT SECTION */
+.contact-form-container, 
+.contact-links-container {
+    background-color: var(--secondary-gray);
+}
+
+.input-custom {
+    background-color: var(--input-blue) !important;
+}
+
+.input-custom::placeholder {
+    color: var(--primary-blue);
+    opacity: 0.6;
+}
+
+.btn-send-message {
+    background-color: var(--primary-blue);
+}
+
+.rounded-4 {
+    border-radius: 20px !important;
+}
+
+/* CONTACT SOCIAL LINKS */
+.contact-links-container {
+    background-color: var(--secondary-gray);
+    padding: 30px;
+    border-radius: 20px;
+    height: 100%;
+}
+
+.social-link-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background-color: var(--white);
+    color: var(--text-dark);
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.social-link-item i {
+    font-size: 1.3rem;
+}
+
+.social-link-item:hover {
+    transform: translateX(10px);
+    background-color: var(--primary-blue);
+    color: var(--white) !important;
+}
+
+.social-link-item:hover i {
+    color: var(--white) !important;
+}
+
+/* Memastikan Link di Hero tidak bergaris bawah */
+.btn-connect {
+    text-decoration: none;
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+}
+/* --- RESPONSIVE NAVIGATION --- */
+
+/* Gaya untuk Mobile (375px) dan Tablet (768px) */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        /* Membuat menu muncul dari atas dengan rapi */
+        background-color: var(--white);
+        padding: 20px;
+        border-radius: 15px;
+        margin-top: 10px;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        
+        /* Navigasi berada di TENGAH */
+        text-align: center;
+    }
+
+    .nav-list .nav-link {
+        margin-left: 0; 
+        padding: 15px 0;
+        border-bottom: 1px solid var(--secondary-gray);
+        width: 100%;
+    }
+
+    /* Menghapus garis bawah pada menu terakhir */
+    .nav-item:last-child .nav-link {
+        border-bottom: none;
+    }
+}
+
+/* Gaya untuk Desktop (1440px) */
+@media (min-width: 992px) {
+    .navbar-collapse {
+        /* Navigasi kembali ke samping (kanan) untuk Desktop */
+        text-align: right;
+    }
+}
