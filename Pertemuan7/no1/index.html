@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo CSS Position Modern</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000; 
+            background-color: #ffffff;
+            padding: 1rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #2d3436;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        .container {
+            padding: 40px 10%;
+            min-height: 150vh; 
+        }
+
+        .profile-card {
+            position: relative; 
+            height: 350px;
+            background: white;
+            margin: 50px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 30px 20px;
+            z-index: 10;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px; 
+            border-radius: 50%; 
+            overflow: hidden;    
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            display: block;
+}
+
+        .profile-card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .profile-card p {
+            font-size: 0.9rem;
+            color: #636e72;
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #f0fdf4;
+            color: #166534;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border: 1px solid #bbf7d0;
+            z-index: 20; 
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #0984e3;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(9, 132, 227, 0.3);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top:hover {
+            background-color: #74b9ff;
+            transform: translateY(-5px);
+        }
+
+        /* Konten Dummy */
+        .dummy-content {
+            margin-top: 50px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MyWeb</div>
+        <ul>
+            <li>Beranda</li>
+            <li>Profil</li>
+            <li>Kontak</li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="profile-card">
+            <div class="status-badge">Online 🟢</div>
+            
+            <!-- Wadah lingkaran foto -->
+            <div class="profile-img">
+                <img src="img/gambar2.jpg" alt="Foto Profil Fadhel">
+            </div>
+            
+            <h2>Fadhel Sahila</h2>
+            <p>Software Engineering Student & Full-stack Developer. Senang mempelajari hal baru di dunia teknologi.</p>
+        </div>
+
+        <div class="dummy-content">
+            <h3>Tentang Halaman Ini</h3>
+            <p>Halaman ini mendemonstrasikan penggunaan <strong>CSS Position</strong>:</p>
+            <ul>
+                <li><strong>Sticky:</strong> Navbar yang tetap di atas saat di-scroll.</li>
+                <li><strong>Relative:</strong> Digunakan pada card sebagai patokan posisi elemen di dalamnya.</li>
+                <li><strong>Absolute:</strong> Badge "Online" yang diposisikan tepat di pojok kanan atas card.</li>
+                <li><strong>Fixed:</strong> Tombol navigasi di pojok kanan bawah yang tidak bergerak meski halaman di-scroll.</li>
+            </ul>
+            <br>
+            <p>Scroll ke bawah untuk melihat bagaimana elemen-elemen ini berinteraksi!</p>
+            <div style="height: 800px;"></div> <p>Anda sudah sampai di bagian bawah. Gunakan tombol biru di pojok kanan untuk kembali ke atas.</p>
+        </div>
+    </div>
+    <a href="#" class="back-to-top" title="Kembali ke Atas">
+        ▲
+    </a>
+</body>
+</html>

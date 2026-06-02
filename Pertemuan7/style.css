@@ -1,0 +1,18 @@
+dt{
+  background-color: black;
+  color: white;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  margin: lem 0;
+}
+
+body{
+  height: 200vh;
+  font-family: sans-serif;
+}
+
+dd{
+  margin: 10px 0 10px 20px;
+}

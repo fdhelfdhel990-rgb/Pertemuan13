@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktif CSS Animation & Transition</title>
+    <style>
+
+        :root {
+            --primary-color: #4f46e5;
+            --secondary-color: #ec4899;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --transition-speed: 0.3s;
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-section {
+            animation: fadeInUp 1s ease-out forwards;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .spinner-container {
+            margin: 40px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #e2e8f0;
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .btn-color {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .btn-color:hover {
+            background-color: var(--secondary-color);
+            border-radius: 30px;
+        }
+        .btn-scale {
+            background-color: #10b981;
+            color: white;
+        }
+        .btn-scale:hover {
+            transform: scale(1.15);
+        }
+        .btn-shadow {
+            background-color: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        .btn-shadow:hover {
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+            transform: translateY(-5px);
+        }
+        .card-perspective {
+            perspective: 1000px; 
+            margin-top: 50px;
+        }
+
+        .card-3d {
+            width: 300px;
+            height: 200px;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .card-3d:hover {
+            transform: rotateY(180deg);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-content {
+            backface-visibility: hidden; 
+        }
+
+        .card-3d h3 { color: var(--primary-color); margin-bottom: 10px; }
+
+        /* Container Pengatur Jarak */
+        section {
+            margin-bottom: 60px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="fade-in-section">
+        <h1>Komponen CSS Animasi</h1>
+        <p class="subtitle">Eksperimen transisi, animasi, dan transformasi tanpa JavaScript.</p>
+    </header>
+
+    <section class="fade-in-section">
+        <div class="spinner-container">
+            <div class="spinner"></div>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">@keyframes infinite spin</p>
+        </div>
+    </section>
+
+    <section class="fade-in-section">
+        <h3>Interaksi Transition</h3>
+        <div class="button-group">
+            <button class="btn btn-color">Ganti Warna</button>
+            <button class="btn btn-scale">Efek Scale</button>
+            <button class="btn btn-shadow">Efek Shadow</button>
+        </div>
+    </section>
+
+    <section class="fade-in-section">
+        <h3>Efek 3D Transform</h3>
+        <div class="card-perspective">
+            <div class="card-3d">
+                <div class="card-content">
+                    <h3>3D Flip Card</h3>
+                    <p>Hover saya untuk melihat efek rotateY 180 derajat!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="fade-in-section" style="margin-top: 50px; color: var(--text-muted); font-size: 0.9rem;">
+        Dibuat dengan murni HTML & CSS
+    </footer>
+
+</body>
+</html>
